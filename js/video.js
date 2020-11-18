@@ -52,8 +52,9 @@ document.querySelector("#mute").addEventListener("click", function(){
 
 document.querySelector("#volumeSlider").addEventListener("change", function(){
 	console.log(this);
-	console.log(this.value);
-	let vol = document.querySelector("#volume").innerHTML = this.value + "%";
+	console.log(this.value/100);
+	video.volume = (this.value/100);
+	let vol = document.querySelector("#volume").innerHTML = (video.volume*100) + "%";
 });
 
 document.getElementById("old").addEventListener("click", function(){
